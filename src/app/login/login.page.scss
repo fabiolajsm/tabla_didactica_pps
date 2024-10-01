@@ -1,0 +1,134 @@
+body {
+  font-family: "Ubuntu", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.fondo {
+  background: #d9d9d9;
+  border-radius: 10px; /* Bordes más redondeados */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+  max-width: 400px; /* Aumentar el ancho */
+  position: relative;
+  animation: slideIn 0.5s forwards;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 30px;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.heading {
+  font-size: 30px;
+  color: #009fb7;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.text-access {
+  color: #003566;
+  font-weight: bold; /* Negrita para más énfasis */
+  margin-bottom: 15px; /* Espacio entre el texto y los botones */
+  font-size: 20px; /* Tamaño de letra más grande */
+}
+
+.buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px; /* Espacio entre los accesos rápidos y el formulario */
+}
+
+.btn {
+  background-color: #e7ecef;
+  color: #2b2d42;
+  border: none;
+  padding: 20px 15px;
+  margin-top: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 22px;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.1); /* Aumentar ligeramente al pasar el mouse */
+  background-color: #009fb7; /* Color azul claro al pasar el mouse */
+}
+
+.separator {
+  height: 2px;
+  background-color: #009fb7; /* Color azul claro para el separador */
+  margin: 20px 0; /* Espaciado arriba y abajo */
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 2px solid #009fb7; /* Borde colorido */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+i {
+  color: black;
+}
+
+.inputField {
+  color: black;
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 10px;
+  font-size: 20px;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+#button {
+  background-color: #003566;
+  color: #d9d9d9;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  transition: background-color 0.3s;
+  height: 80px;
+}
+
+#button:hover {
+  background-color: #009fb7; /* Color más oscuro al pasar el mouse */
+}
+
+.text-center {
+  text-align: center;
+  color: #003566;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.text-danger {
+  color: #dc3545;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

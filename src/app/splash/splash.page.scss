@@ -12,7 +12,7 @@
     transform: scale(1); /* Tamaño original */
   }
   50% {
-    transform: scale(1.1); /* Zoom al 110% */
+    transform: scale(1.03); /* Zoom al 103% */
   }
   100% {
     transform: scale(1); /* Regresa al tamaño original */
@@ -20,13 +20,13 @@
 }
 
 img {
-  width: 100%;
-  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
   animation: zoomInOut 2s ease-in-out infinite;
 }
 
 h2 {
-  margin-top: 16px;
+  margin-top: 45px;
   text-align: center;
   color: #e6e6ea;
   font-family: "Playpen Sans", cursive;

@@ -1,36 +1,24 @@
 import { Injectable } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from '@angular/fire/auth';
+import { Auth, signInWithEmailAndPassword } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-
+import { from } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
+  constructor(private firebaseAuth: Auth, private router: Router) {}
 
-  userActive : any;
-
-  constructor(private auth: Auth, private router: Router) { }
-  
-
-  async Login(email : string, password : string){
-    return await signInWithEmailAndPassword(this.auth, email, password)
-  
-  }
-
-  async Register(email : string, password : string) {
-    return await createUserWithEmailAndPassword(this.auth, email, password);
-  }
-
-  getUser() {
-    return this.userActive;
-  }
-
-  getUserEmail(){
-    return this.userActive.email;
+  login(email: string, password: string) {
+    const promise = signInWithEmailAndPassword(
+      this.firebaseAuth,
+      email,
+      password
+    ).then(() => {});
+    return from(promise);
   }
 
   logout() {
-    this.auth.signOut().then(() => this.router.navigate(['login']));
+    this.firebaseAuth.signOut().then(() => this.router.navigate(['login']));
   }
 }

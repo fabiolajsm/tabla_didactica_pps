@@ -18,14 +18,14 @@ import { Router } from '@angular/router';
 })
 export class SplashPage {
   slides: string[] = [
-    '/assets/tabla_didactica_e.png',
-    '/assets/tabla_didactica_p.png',
-    '/assets/tabla_didactica_i.png',
+    '/assets/idioma_e.png',
+    '/assets/idioma_p.png',
+    '/assets/idioma_i.png',
     '/assets/logo.png',
   ];
   constructor(public router: Router) {
     setTimeout(() => {
       this.router.navigateByUrl('login');
-    }, 5000);
+    }, 5500);
   }
 }

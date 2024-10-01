@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
+import { LoginPage } from './login/login.page';
 
 export const routes: Routes = [
   {
@@ -13,10 +13,11 @@ export const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent,
+    component: LoginPage,
   },
   {
     path: 'splash',
-    loadComponent: () => import('./splash/splash.page').then( m => m.SplashPage)
+    loadComponent: () =>
+      import('./splash/splash.page').then((m) => m.SplashPage),
   },
 ];
