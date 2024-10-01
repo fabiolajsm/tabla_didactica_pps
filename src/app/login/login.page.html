@@ -20,7 +20,6 @@
     </button>
     <button
       class="btn"
-      login
       (click)="handleQuickAccess('anonimo@anonimo.com', '444444')"
     >
       😋 Anónimo
@@ -45,6 +44,7 @@
         type="text"
         class="inputField"
         placeholder="Correo electrónico"
+        (input)="onInputChange()"
       />
     </div>
 
@@ -56,11 +56,15 @@
         type="password"
         class="inputField"
         placeholder="Contraseña"
+        (input)="onInputChange()"
       />
     </div>
 
     <button id="button" type="submit">Iniciar sesión</button>
-    <p class="text-center text-danger" *ngIf="errorMessage">
+    <p
+      class="text-center text-danger"
+      *ngIf="errorMessage && errorMessage.length"
+    >
       {{ errorMessage }}
     </p>
   </form>
