@@ -4,13 +4,7 @@ import {
   IonToolbar,
   IonTitle,
   IonContent,
-  IonGrid,
   IonButton,
-  IonCol,
-  IonRow,
-  IonLoading,
-  IonLabel,
-  IonIcon,
   IonFab,
   IonFabList,
   IonFabButton,
@@ -164,7 +158,7 @@ export class HomePage {
   handlePlayAudio(selection: string) {
     this.audio.pause();
     this.audio = new Audio(
-      `assets/audios/${selection}_${this.selectedLanguage}.mp3`
+      `assets/audios/${selection}_${this.selectedLanguage.toLowerCase()}.mp3`
     );
     this.audio.play();
   }
