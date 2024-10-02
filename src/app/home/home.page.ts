@@ -1,70 +1,176 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonButton, IonCol, IonRow, IonLoading, IonLabel, IonIcon, IonFab, IonFabList, IonFabButton } from '@ionic/angular/standalone';
+import {
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonGrid,
+  IonButton,
+  IonCol,
+  IonRow,
+  IonLoading,
+  IonLabel,
+  IonIcon,
+  IonFab,
+  IonFabList,
+  IonFabButton,
+} from '@ionic/angular/standalone';
 import { AuthService } from '../services/auth.service';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { addIcons } from 'ionicons';
 
+type LANGUAGES = 'SPANISH' | 'PORTUGUESE' | 'ENGLISH';
+type THEMES = 'COLORS' | 'NUMBERS' | 'ANIMALS';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [IonFabButton, IonFabList, IonFab, IonIcon, IonLabel, IonLoading, IonRow, IonCol, IonButton, IonGrid, IonHeader, IonToolbar, IonTitle, IonContent, CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    IonFab,
+    IonFabButton,
+    IonFabList,
+    IonButton,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    CommonModule,
+  ],
 })
 export class HomePage {
-
-  public selectedIdioma: string = "esp";
-  public selectedTema: string = "colores";
+  public selectedLanguage: LANGUAGES = 'SPANISH';
+  public selectedTheme: THEMES = 'COLORS';
   public audio: HTMLAudioElement = new Audio();
-  orientation: string = 'vertical';
 
-  constructor(private auth: AuthService, private router: Router) { addIcons({}) }
+  public audioItems = [
+    {
+      animal: {
+        audio: 'gato',
+        image: 'gato.png',
+        alt: 'gato',
+      },
+      number: {
+        audio: 'uno',
+        image: 'uno.png',
+        alt: 'uno',
+      },
+      color: {
+        audio: 'azul',
+        image: 'azul.png',
+        alt: 'azul',
+      },
+    },
+    {
+      animal: {
+        audio: 'perro',
+        image: 'perro.png',
+        alt: 'perro',
+      },
+      number: {
+        audio: 'dos',
+        image: 'dos.png',
+        alt: 'dos',
+      },
+      color: {
+        audio: 'amarillo',
+        image: 'amarillo.png',
+        alt: 'amarillo',
+      },
+    },
+    {
+      animal: {
+        audio: 'caballo',
+        image: 'caballo.png',
+        alt: 'caballo',
+      },
+      number: {
+        audio: 'tres',
+        image: 'tres.png',
+        alt: 'tres',
+      },
+      color: {
+        audio: 'rojo',
+        image: 'rojo.png',
+        alt: 'rojo',
+      },
+    },
+    {
+      animal: {
+        audio: 'conejo',
+        image: 'conejo.png',
+        alt: 'conejo',
+      },
+      number: {
+        audio: 'cuatro',
+        image: 'cuatro.png',
+        alt: 'cuatro',
+      },
+      color: {
+        audio: 'verde',
+        image: 'verde.png',
+        alt: 'verde',
+      },
+    },
+    {
+      animal: {
+        audio: 'carpincho',
+        image: 'carpincho.png',
+        alt: 'carpincho',
+      },
+      number: {
+        audio: 'cinco',
+        image: 'cinco.png',
+        alt: 'cinco',
+      },
+      color: {
+        audio: 'morado',
+        image: 'morado.png',
+        alt: 'morado',
+      },
+    },
+    {
+      animal: {
+        audio: 'tortuga',
+        image: 'tortuga.png',
+        alt: 'tortuga',
+      },
+      number: {
+        audio: 'seis',
+        image: 'seis.png',
+        alt: 'seis',
+      },
+      color: {
+        audio: 'rosa',
+        image: 'rosa.png',
+        alt: 'rosa',
+      },
+    },
+  ];
 
-  selectIdioma(idioma: string) {
-    this.selectedIdioma = idioma;
+  constructor(private auth: AuthService, private router: Router) {
+    addIcons({});
   }
 
-  idiomaSeleccionado() : string
-  {
-    if(this.selectedIdioma === "por"){
-      return "portugal";
-    } else{
-      if(this.selectedIdioma === "en"){
-        return "ingles";
-      } else{
-        return "españa";
-      }
-    }
+  selectLanguage(language: LANGUAGES) {
+    this.selectedLanguage = language;
   }
 
-  categoriaSeleccionado() : string
-  {
-    if(this.selectedTema === "colores"){
-      return "colores";
-    } else{
-      if(this.selectedIdioma === "en"){
-        return "ingles";
-      } else{
-        return "españa";
-      }
-    }
+  selectTheme(theme: THEMES) {
+    this.selectedTheme = theme;
   }
 
-  selectTema(tema: string) {
-    this.selectedTema = tema;
-  }
-
-  play(select: string) {
-    console.log(select);
+  handlePlayAudio(selection: string) {
     this.audio.pause();
-    this.audio = new Audio(`assets/audios/${select}_${this.selectedIdioma}.mp3`);
+    this.audio = new Audio(
+      `assets/audios/${selection}_${this.selectedLanguage}.mp3`
+    );
     this.audio.play();
   }
 
-  CloseSession() {
+  handleLogout() {
     this.auth.logout();
-    this.router.navigateByUrl("login");
+    this.router.navigateByUrl('login');
   }
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Auth, signInWithEmailAndPassword } from '@angular/fire/auth';
 import { Router } from '@angular/router';
+import { getAuth } from 'firebase/auth';
 import { from } from 'rxjs';
 
 @Injectable({

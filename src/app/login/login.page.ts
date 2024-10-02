@@ -43,7 +43,7 @@ export class LoginPage {
 
       // Verifica el email
       if (this.form.controls['email'].invalid) {
-        this.errorMessage = 'El correo electrónico no es válido.';
+        this.errorMessage = 'El correo electrónico es inválido.';
       }
 
       // Verifica la contraseña
@@ -68,7 +68,7 @@ export class LoginPage {
       next: () => {
         this.spinner.hide();
         this.errorMessage = undefined;
-        this.router.navigateByUrl('');
+        this.router.navigateByUrl('home');
         this.form.controls['email'].setValue('');
         this.form.controls['password'].setValue('');
       },

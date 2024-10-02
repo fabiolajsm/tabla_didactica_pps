@@ -7,22 +7,25 @@
   padding: 16px;
 }
 
-@keyframes zoomInOut {
+@keyframes float {
   0% {
-    transform: scale(1); /* Tamaño original */
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(-15deg); /* Giro a la izquierda */
   }
   50% {
-    transform: scale(1.03); /* Zoom al 103% */
+    transform: translateY(-10px) rotate(15deg); /* Giro a la derecha */
   }
   100% {
-    transform: scale(1); /* Regresa al tamaño original */
+    transform: translateY(0) rotate(0deg);
   }
 }
 
 img {
   border-radius: 50%;
   object-fit: cover;
-  animation: zoomInOut 2s ease-in-out infinite;
+  animation: float 2s ease-in-out infinite; /* Animación de flotación */
 }
 
 h2 {
@@ -31,4 +34,17 @@ h2 {
   color: #e6e6ea;
   font-family: "Playpen Sans", cursive;
   font-size: 15px;
+  animation: colorChange 3s ease infinite; /* Animación de color */
+}
+
+@keyframes colorChange {
+  0% {
+    color: #e6e6ea;
+  }
+  50% {
+    color: #ffcc00; /* Color amarillo */
+  }
+  100% {
+    color: #e6e6ea;
+  }
 }

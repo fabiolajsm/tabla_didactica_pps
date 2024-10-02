@@ -10,10 +10,10 @@ body {
 
 .fondo {
   background: #d9d9d9;
-  border-radius: 10px; /* Bordes más redondeados */
+  border-radius: 10px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   padding: 30px;
-  max-width: 400px; /* Aumentar el ancho */
+  max-width: 400px;
   position: relative;
   animation: slideIn 0.5s forwards;
   margin-left: 15px;
@@ -40,9 +40,9 @@ body {
 
 .text-access {
   color: #003566;
-  font-weight: bold; /* Negrita para más énfasis */
-  margin-bottom: 15px; /* Espacio entre el texto y los botones */
-  font-size: 20px; /* Tamaño de letra más grande */
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 20px;
 }
 
 .buttons-container {
@@ -50,7 +50,7 @@ body {
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
-  margin-bottom: 20px; /* Espacio entre los accesos rápidos y el formulario */
+  margin-bottom: 20px;
 }
 
 .btn {
@@ -61,19 +61,20 @@ body {
   margin-top: 10px;
   border-radius: 20px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 20px;
   transition: transform 0.2s, background-color 0.3s;
 }
 
 .btn:hover {
-  transform: scale(1.1); /* Aumentar ligeramente al pasar el mouse */
-  background-color: #009fb7; /* Color azul claro al pasar el mouse */
+  transform: scale(1.05);
+  background-color: #003566;
+  color: #d9d9d9;
 }
 
 .separator {
   height: 2px;
-  background-color: #009fb7; /* Color azul claro para el separador */
-  margin: 20px 0; /* Espaciado arriba y abajo */
+  background-color: #009fb7;
+  margin: 20px 0;
 }
 
 .inputContainer {
@@ -81,8 +82,8 @@ body {
   align-items: center;
   margin-bottom: 20px;
   padding: 10px;
-  border: 2px solid #009fb7; /* Borde colorido */
-  border-radius: 10px; /* Bordes redondeados */
+  border: 2px solid #009fb7;
+  border-radius: 10px;
 }
 
 i {
@@ -105,30 +106,29 @@ i {
   background-color: #003566;
   color: #d9d9d9;
   border: none;
-  padding: 12px;
   width: 100%;
   border-radius: 10px;
   cursor: pointer;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
-  margin-bottom: 20px;
   transition: background-color 0.3s;
-  height: 80px;
+  height: 60px;
 }
 
 #button:hover {
-  background-color: #009fb7; /* Color más oscuro al pasar el mouse */
+  color: #009fb7;
 }
 
 .text-center {
   text-align: center;
   color: #003566;
   font-weight: 600;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .text-danger {
   color: #dc3545;
-  margin-top: 10px;
+  margin-top: 25px;
+  font-size: 20px;
   margin-bottom: 10px;
 }
