@@ -37,25 +37,25 @@
 
   <form [formGroup]="form" (ngSubmit)="handleSubmit()">
     <div class="inputContainer">
-      <i class="fa fa-at" aria-hidden="true"></i>
-      <input
+      <ion-input
         id="email"
         formControlName="email"
-        type="text"
-        class="inputField"
-        placeholder="Correo electrónico"
+        type="email"
+        fill="solid"
+        label="Correo electrónico"
+        labelPlacement="floating"
         (input)="onInputChange()"
       />
     </div>
 
     <div class="inputContainer">
-      <i class="fa fa-key" aria-hidden="true"></i>
-      <input
+      <ion-input
         id="password"
         formControlName="password"
         type="password"
-        class="inputField"
-        placeholder="Contraseña"
+        fill="solid"
+        label="Contraseña"
+        labelPlacement="floating"
         (input)="onInputChange()"
       />
     </div>

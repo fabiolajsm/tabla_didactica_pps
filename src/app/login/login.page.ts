@@ -11,13 +11,14 @@ import { AuthService } from '../services/auth.service';
 import { FirebaseError } from 'firebase/app';
 import { authErrors } from '../services/auth.errors';
 import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
+import { IonInput } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, NgxSpinnerModule],
+  imports: [CommonModule, ReactiveFormsModule, NgxSpinnerModule, IonInput],
 })
 export class LoginPage {
   form: FormGroup = this.fb.group({

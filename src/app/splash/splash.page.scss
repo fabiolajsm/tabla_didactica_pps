@@ -23,7 +23,8 @@
 }
 
 img {
-  border-radius: 50%;
+  border-radius: 35%;
+  height: 22rem;
   object-fit: cover;
   animation: float 2s ease-in-out infinite; /* Animación de flotación */
 }
@@ -33,7 +34,7 @@ h2 {
   text-align: center;
   color: #e6e6ea;
   font-family: "Playpen Sans", cursive;
-  font-size: 15px;
+  font-size: 40px;
   animation: colorChange 3s ease infinite; /* Animación de color */
 }
 
